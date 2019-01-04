@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>groza</artifactId>
+        <groupId>org.wana</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.wana</groupId>
+    <artifactId>user</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>user-dao</module>
+        <module>user-common</module>
+        <module>user-facade</module>
+        <module>user-provider</module>
+        <module>user-web</module>
+        <module>user-core</module>
+    </modules>
+
+    <name>user</name>
+
+    <dependencies>
+
+    </dependencies>
+
+
+</project>

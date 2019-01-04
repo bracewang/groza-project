@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://code.alibabatech.com/schema/dubbo
+        http://code.alibabatech.com/schema/dubbo/dubbo.xsd
+        ">
+
+	<!-- 提供方应用信息，用于计算依赖关系 -->
+	<dubbo:application name="user-provider" />
+
+	<!-- 用dubbo协议暴露服务 -->
+	<dubbo:protocol name="dubbo" port="20880" />
+
+	<!-- 使用per暴露服务地址 -->
+	<dubbo:registry id="servicesRegistry" group="dubbo"
+		protocol="zookeeper" address="47.98.214.141:2181" />
+
+	<!--服务 -->
+	<bean id="loginFacadeImpl" class="org.wana.user.provider.LoginFacadeImpl" />
+	<dubbo:service registry="servicesRegistry"
+		interface="org.wana.user.LoginFacade" ref="loginFacadeImpl"
+		version="1.0.1" delay="-1" retries="0" timeout="1000000" />
+
+
+</beans>
